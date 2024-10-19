@@ -24,6 +24,3 @@
         </a>
     </div>
 </footer>
-<div class="bg-[#4DA443] w-full h-[45px] flex justify-center items-center text-white">
-    <h1>eTanom by Sikai Inc. © 2024 All Rights Reserved.</h1>
-</div>

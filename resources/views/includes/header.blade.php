@@ -1,4 +1,4 @@
-<header class="z-10 mx-auto top-0 fixed w-full bg-gray-900/80 px-20 h-[100px] flex items-center gap-2 py-5 text-white">
+<header class="z-10 mx-auto top-0 fixed w-full bg-gray-900/80 px-20 h-20 flex items-center gap-2 py-5 text-white">
     <div class="flex justify-start w-40">
         Logo
     </div>
