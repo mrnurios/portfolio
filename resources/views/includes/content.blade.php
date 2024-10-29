@@ -1,7 +1,8 @@
 <main class='relative bg-neutral-900 w-full h-full flex flex-col text-white md:py-20 md:gap-y-10 overflow-clip'>
-    <section class='relative h-full w-full p-10 md:px-20 md:p-10'>
+    <section x-data="{ scrollPosition: 0, midpoint: 0 }" x-init="midpoint = window.innerHeight / 2" x-on:scroll.window="scrollPosition = window.scrollY"
+        class='relative h-full w-full p-10 md:px-20 md:p-10'>
         <div class='max-w-7xl mx-auto flex flex-col md:flex-row h-full w-full gap-5 md:gap-10'>
-            <div
+            <div :style="{ transform: `translateX(${Math.min(scrollPosition * 0.7 - midpoint, 0)}px)` }"
                 class='border-8 border-neutral-800 bg-neutral-800 rounded-lg h-72 md:h-[500px] w-72 md:w-96 overflow-clip mx-auto drop-shadow-xl group'>
                 <div class='size-full rounded-lg bg-center bg-cover bg-no-repeat overflow-clip'
                     style='background-image:url("{{ asset('img/8.jpg') }}")'>
@@ -10,7 +11,6 @@
                             class='absolute rounded-full bg-amber-400 transition-all ease-in-out duration-500 size-[700px] scale-0 group-hover:scale-100'>
                         </div>
                         <div class='absolute rounded-full bg-red-400 transition-all duration-500 delay-200 scale-50 md:scale-100
-
                                 size-0 group-hover:size-[700px]
                                 bg-no-repeat
                                 bg-[length:500px_500px]
@@ -20,7 +20,8 @@
                     </div>
                 </div>
             </div>
-            <div class='flex flex-col justify-center w-full md:w-3/5 self-stretch relative gap-y-7'>
+            <div :style="{ transform: `translateX(${Math.max(-scrollPosition * 0.6 + midpoint, 0)}px)` }"
+                class='flex flex-col justify-center w-full md:w-3/5 self-stretch relative gap-y-7'>
                 <div>
                     <h1 class='text-2xl font-bold'><span
                             class='decoration-amber-400 underline underline-offset-8'>Abo</span>ut Me
