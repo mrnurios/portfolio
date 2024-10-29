@@ -52,7 +52,7 @@
                         </span>Lugait, Misamis
                         Oriental</h1>
                 </div>
-                <a data-aos="fade-right" data-aos-anchor-placement="center-bottom" href='{{ asset('docs/resume.pdf') }}'
+                <a data-aos="fade-left" data-aos-anchor-placement="center-bottom" href='{{ asset('docs/resume.pdf') }}'
                     download="resume.pdf"
                     class='font-semibold bg-amber-400 px-4 py-3 rounded-lg w-fit text-sm transition-all duration-300 focus:scale-110 md:hover:scale-110'>
                     DOWNLOAD RESUME
