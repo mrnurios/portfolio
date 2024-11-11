@@ -1,8 +1,7 @@
 <main class='relative bg-neutral-900 w-full h-full flex flex-col text-white md:py-20 md:gap-y-10 overflow-clip'>
-    <section x-data="{ scrollPosition: 0, midpoint: 0 }" x-init="midpoint = window.innerHeight / 2" x-on:scroll.window="scrollPosition = window.scrollY"
-        class='relative h-full w-full p-10 md:px-20 md:p-10'>
+    <section {{-- x-data="{ scrollPosition: 0, midpoint: 0 }" x-init="midpoint = window.innerHeight / 2" x-on:scroll.window="scrollPosition = window.scrollY" --}} class='relative h-full w-full p-10 md:px-20 md:p-10'>
         <div class='max-w-7xl mx-auto flex flex-col md:flex-row h-full w-full gap-5 md:gap-10'>
-            <div :style="{ transform: `translateX(${Math.min(scrollPosition * 0.7 - midpoint, 0)}px)` }"
+            <div {{-- :style="{ transform: `translateX(${Math.min(scrollPosition * 0.7 - midpoint, 0)}px)` }" --}}
                 class='border-8 border-neutral-800 bg-neutral-800 rounded-lg h-72 md:h-[500px] w-72 md:w-96 overflow-clip mx-auto drop-shadow-xl group'>
                 <div class='size-full rounded-lg bg-center bg-cover bg-no-repeat overflow-clip'
                     style='background-image:url("{{ asset('img/8.jpg') }}")'>
@@ -20,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div :style="{ transform: `translateX(${Math.max(-scrollPosition * 0.6 + midpoint, 0)}px)` }"
+            <div {{-- :style="{ transform: `translateX(${Math.max(-scrollPosition * 0.6 + midpoint, 0)}px)` }" --}}
                 class='flex flex-col justify-center w-full md:w-3/5 self-stretch relative gap-y-7'>
                 <div>
                     <h1 class='text-2xl font-bold'><span
@@ -61,7 +60,8 @@
         </div>
 
     </section>
-    <section class='relative h-full w-full p-10 md:px-20 md:p-10 bg-neutral-800'>
+    <section x-data="{ scrollPosition: 0, midpoint: 0 }" x-init="midpoint = window.innerHeight / 2" x-on:scroll.window="scrollPosition = window.scrollY"
+        class='relative h-full w-full p-10 md:px-20 md:p-10 bg-neutral-800'>
         <div
             class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
         </div>
@@ -261,7 +261,8 @@
                         <img class='relative z-10 w-28' src='{{ asset('svg/javascript.svg') }}'>
                     </a>
                 </div>
-                <div class='grid grid-flow-col gap-2 place-items-center'>
+                <div :style="{ transform: `translateX(${Math.max(-scrollPosition * 0.6 + midpoint, 0)}px)` }"
+                    class='grid grid-flow-col gap-2 place-items-center'>
                     <a href="https://www.python.org/"
                         x-data='{ size:100, x: 0, y: 0, width: $el.getBoundingClientRect().width, height: $el.getBoundingClientRect().height}'
                         @mousemove="
@@ -271,7 +272,7 @@
                             $el.style.setProperty('--x', `${x-(size/2)}px`); 
                             $el.style.setProperty('--y', `${y-(size/2)}px`);"
                         style="--size:100px;" {{-- data-aos='fade-up-right' data-aos-duration='1000' --}}
-                        class='relative grid place-items-center size-20 overflow-clip bg-neutral-900/40 rounded-full glow p-5
+                        class='relative flex place-items-center size-20 overflow-clip bg-neutral-900/40 rounded-full glow p-5
                             hover:before:animate-pulse
                             before:absolute
                             before:bg-white
@@ -297,7 +298,7 @@
                             $el.style.setProperty('--x', `${x-(size/2)}px`); 
                             $el.style.setProperty('--y', `${y-(size/2)}px`);"
                         style="--size:100px;" {{-- data-aos='fade-up-right' data-aos-duration='1000' --}}
-                        class='relative grid place-items-center size-20 overflow-clip bg-neutral-900/40 rounded-full glow p-5
+                        class='relative flex place-items-center size-20 overflow-clip bg-neutral-900/40 rounded-full glow p-5
                             hover:before:animate-pulse
                             before:absolute
                             before:bg-white
@@ -312,85 +313,7 @@
                             after:rounded-full
                             after:inset-[2px]
                         '>
-                        <img class='relative z-10 w-fit' src='{{ asset('svg/python.svg') }}'>
-                    </a>
-                    <a href="https://www.python.org/"
-                        x-data='{ size:100, x: 0, y: 0, width: $el.getBoundingClientRect().width, height: $el.getBoundingClientRect().height}'
-                        @mousemove="
-                            const rect = $el.getBoundingClientRect();
-                            x = $event.clientX - rect.left;
-                            y = $event.clientY - rect.top;
-                            $el.style.setProperty('--x', `${x-(size/2)}px`); 
-                            $el.style.setProperty('--y', `${y-(size/2)}px`);"
-                        style="--size:100px;" {{-- data-aos='fade-up-right' data-aos-duration='1000' --}}
-                        class='relative grid place-items-center size-20 overflow-clip bg-neutral-900/40 rounded-full glow p-5
-                            hover:before:animate-pulse
-                            before:absolute
-                            before:bg-white
-                            before:blur-2xl
-                            before:rounded-full
-                            before:transition-opacity
-                            before:duration-1000
-                            before:opacity-0
-                            hover:before:opacity-100
-                            after:absolute
-                            after:bg-neutral-900/50
-                            after:rounded-full
-                            after:inset-[2px]
-                        '>
-                        <img class='relative z-10 w-fit' src='{{ asset('svg/python.svg') }}'>
-                    </a>
-                    <a href="https://www.python.org/"
-                        x-data='{ size:100, x: 0, y: 0, width: $el.getBoundingClientRect().width, height: $el.getBoundingClientRect().height}'
-                        @mousemove="
-                            const rect = $el.getBoundingClientRect();
-                            x = $event.clientX - rect.left;
-                            y = $event.clientY - rect.top;
-                            $el.style.setProperty('--x', `${x-(size/2)}px`); 
-                            $el.style.setProperty('--y', `${y-(size/2)}px`);"
-                        style="--size:100px;" {{-- data-aos='fade-up-right' data-aos-duration='1000' --}}
-                        class='relative grid place-items-center size-20 overflow-clip bg-neutral-900/40 rounded-full glow p-5
-                            hover:before:animate-pulse
-                            before:absolute
-                            before:bg-white
-                            before:blur-2xl
-                            before:rounded-full
-                            before:transition-opacity
-                            before:duration-1000
-                            before:opacity-0
-                            hover:before:opacity-100
-                            after:absolute
-                            after:bg-neutral-900/50
-                            after:rounded-full
-                            after:inset-[2px]
-                        '>
-                        <img class='relative z-10 w-fit' src='{{ asset('svg/python.svg') }}'>
-                    </a>
-                    <a href="https://www.python.org/"
-                        x-data='{ size:100, x: 0, y: 0, width: $el.getBoundingClientRect().width, height: $el.getBoundingClientRect().height}'
-                        @mousemove="
-                        const rect = $el.getBoundingClientRect();
-                        x = $event.clientX - rect.left;
-                        y = $event.clientY - rect.top;
-                        $el.style.setProperty('--x', `${x-(size/2)}px`); 
-                        $el.style.setProperty('--y', `${y-(size/2)}px`);"
-                        style="--size:100px;" {{-- data-aos='fade-up-right' data-aos-duration='1000' --}}
-                        class='relative grid place-items-center size-20 overflow-clip bg-neutral-900/40 rounded-full glow p-5
-                        hover:before:animate-pulse
-                        before:absolute
-                        before:bg-white
-                        before:blur-2xl
-                        before:rounded-full
-                        before:transition-opacity
-                        before:duration-1000
-                        before:opacity-0
-                        hover:before:opacity-100
-                        after:absolute
-                        after:bg-neutral-900/50
-                        after:rounded-full
-                        after:inset-[2px]
-                    '>
-                        <img class='relative z-10 w-fit' src='{{ asset('svg/python.svg') }}'>
+                        <img class='relative w-fit z-10' src='{{ asset('svg/java.svg') }}'>
                     </a>
                 </div>
             </div>
