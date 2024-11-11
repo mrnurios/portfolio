@@ -9,6 +9,6 @@ export default defineConfig({
         }),
     ],
     build: {
-        outDir: "dist", // Make sure this is 'dist' or match the output folder you configured
+        outDir: "dist", // Change the output directory to 'public'
     },
 });
